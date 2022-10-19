@@ -1,12 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="">
+    
     <table>
       <tr v-for="booking in bookings" :key="booking._id">
         <td>{{booking._id}}</td>
         <td>{{booking.email}}</td>
+        <td>
+          <router-link :to="`/booking/${booking._id}`">Details</router-link>
+        </td>
       </tr>
     </table>
+    <br/><br/><br/>
     <button v-for="i in pages" :key="i" @click="fetchPage(i)">{{ i }}</button>
   </div>
 </template>
